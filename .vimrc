@@ -10,6 +10,9 @@ filetype plugin indent on
 syntax on
 set encoding=utf-8
 
+" Set leader key
+let mapleader = ","
+
 set number " Display line numbers
 " set cursorline " Have a line indicating the cursor location
 set backspace=indent,eol,start
@@ -88,25 +91,23 @@ if !isdirectory(expand(&directory))
 	call mkdir(expand(&directory), "p")
 endif
 
-
-" Set leader key
-let mapleader = ","
-
-nnoremap <leader>u :GundoToggle<CR>
-
 " Recommended settings for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=4
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=0
 
 """ Spelling
 set spell spelllang=en_gb
 nnoremap <F4> :set spell!<CR>
-nnoremap <leader>f 1z=
 
 " Always show statusline
 set laststatus=2
@@ -122,10 +123,6 @@ set colorcolumn=80
 set noautoread " Don't automatically re-read changed files
 set autowrite " Stop complaining about unsaved buffers
 " set autowriteall
-
-""" Quick edit
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
 
 """ Insert timestamp
 :nnoremap <F2> "=strftime("%c")<CR>P
@@ -145,8 +142,6 @@ function! <SID>StripTrailingWhitespace()
 	call cursor(l, c)
 endfunction
 
-nmap <silent> <leader>w :call <SID>StripTrailingWhitespace()<CR>
-
 "function! NumberToggle()
 	"if(&relativenumber == 1)
 		"set number
@@ -156,3 +151,13 @@ nmap <silent> <leader>w :call <SID>StripTrailingWhitespace()<CR>
 "endfunction
 
 "nnoremap <leader>l :call NumberToggle()<CR>
+
+nmap <leader>E :Errors<CR>
+nmap <leader>lc :lclose<CR>
+nnoremap <leader>u :GundoToggle<CR>
+nmap <silent> <leader>w :call <SID>StripTrailingWhitespace()<CR>
+
+""" Quick edit
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>f 1z=
