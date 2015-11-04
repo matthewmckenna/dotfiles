@@ -51,6 +51,8 @@ set shiftround " Rounds indent to a multiple of shiftwidt
 """ Indentation
 set autoindent " Always set autoindenting
 set smartindent " Use smart indent if there is no indent file
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
 
 """ Command mode completion
 set wildmenu " Menu completion in command mode on <Tab>
