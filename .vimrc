@@ -51,8 +51,8 @@ set shiftround " Rounds indent to a multiple of shiftwidt
 """ Indentation
 set autoindent " Always set autoindenting
 set smartindent " Use smart indent if there is no indent file
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
+"vnoremap < <gv " better indentation
+"vnoremap > >gv " better indentation
 
 """ Command mode completion
 set wildmenu " Menu completion in command mode on <Tab>
@@ -163,3 +163,5 @@ nmap <silent> <leader>w :call <SID>StripTrailingWhitespace()<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>f 1z=
+nnoremap <leader>bn :bnext<cr>
+nnoremap <leader>bp :bprevious<cr>
