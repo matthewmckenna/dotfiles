@@ -75,6 +75,9 @@ map <c-k> <c-w>k
 map <c-h> <c-w>h
 map <c-l> <c-w>l
 
+nnoremap <C-]> :bnext<CR>
+nnoremap <C-[> :bprevious<CR>
+
 """ Backups
 set noswapfile
 set backup
@@ -163,5 +166,3 @@ nmap <silent> <leader>w :call <SID>StripTrailingWhitespace()<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>f 1z=
-nnoremap <leader>bn :bnext<cr>
-nnoremap <leader>bp :bprevious<cr>
