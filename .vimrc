@@ -75,8 +75,8 @@ map <c-k> <c-w>k
 map <c-h> <c-w>h
 map <c-l> <c-w>l
 
-nnoremap <C-]> :bnext<CR>
-nnoremap <C-[> :bprevious<CR>
+nnoremap <leader>] :bnext <CR>
+nnoremap <leader>[ :bprevious <CR>
 
 """ Backups
 set noswapfile

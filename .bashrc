@@ -88,6 +88,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lld='ls -alFd */'
 
 # rm alias
 alias rm='rm -i'
